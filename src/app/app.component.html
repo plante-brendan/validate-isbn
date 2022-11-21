@@ -1,0 +1,68 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+<nav style="background-color:#0372B5" class="navbar navbar-expand-lg">
+  <img src="../assets/images/logo.png">
+</nav>
+
+<div style="text-justify:center; margin-top: 1%; margin-left: 15%; margin-right:15%">
+<p>International Standard Book Numbers (ISBN) come in two forms. Ten digit ISBN were used from their creation in 1970 until 2007. A ten digit ISBN has 4 sections. 
+Sections can all be crammed together with no divider, or you can use space or dash. 
+Section 1 can be up to 5 characters, section 2 can be up to 7 characters, section 3 can be up to 6 characters, and section 4 is the last digit only. Each digit may only be 0-9 except the last one which can also be “X”.
+Additionally, you may add ISBN or ISBN-10 with or without a colon 
+to the start of the ISBN as long as a space is added in between this prefix and the first digit of the ISBN.</p>
+
+<form style="margin-top: 1%" #tenForm="ngForm" (ngSubmit)="onSubmitTenDigitISBN(tenForm)">
+  <div class="form-group">
+    <label for="isbnDescription"><strong>Enter 10 digit ISBN</strong></label>
+    <div style="display: flex; flex-flow: row;">
+      <input style="margin-right: 1%" type="text" required ngModel name="rawISBN" class="form-control" id="rawISBNTen" aria-describedby="isbnHelp" placeholder="Enter 10 digit ISBN">
+      <button style="background-color: #0372B5;" id="tenFormSubmit" [disabled]="tenForm.invalid" type="submit" class="btn btn-primary">Validate</button>
+    </div>
+  </div>
+  
+</form>
+
+<div id="tenSuccess" style="margin-top: 1%; margin-bottom: 1%" *ngIf="tenDigitSuccessAlert" class="alert alert-dismissible fade show banner-success" role="alert">
+  <strong>Success!</strong> {{tenDigitISBN}} is a valid 10 digit ISBN.
+  <button (click)="closeTenDigitSuccessAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div id="tenFailure" style="margin-top: 1%; margin-bottom: 1%" *ngIf="tenDigitFailureAlert" class="alert alert-dismissible fade show banner-fail" role="alert">
+  <strong>Oh no!</strong> {{tenDigitISBN}} is not a valid 10 digit ISBN. Reason: {{tenDigitFailureReason}}
+  <button (click)="closeTenDigitFailureAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<hr class="thematic-padding">
+<p>Thirteen digit ISBN were introduced in 2007 and have been in use ever since. A thirteen digit ISBN has 5 sections. 
+Sections can all be crammed together with no divider, or you can use space or dash.
+Section 1 must be either 978 or 979, Section 2 can be up to 5 characters, section 3 can be up to 7 characters, section 4 can be up to 6 characters, and section 5 is the last digit only.
+Each digit of the ISBN must be 0-9, there is no “X” in 13 digit ISBN.
+Additionally, you may add ISBN or ISBN-13 with or without a colon to the start of the ISBN as long as a space is added in between this prefix and the first digit of the ISBN.
+Sections can all be crammed together with no divider, or you can use space or dash.</p>
+
+
+<form style="margin-top: 1%" #thirteenForm="ngForm" (ngSubmit)="onSubmitThirteenDigitISBN(thirteenForm)">
+  <div class="form-group">
+    <label for="isbnDescription"><strong>Enter 13 digit ISBN</strong></label>
+    <div style="display: flex; flex-flow: row;">
+      <input style="margin-right: 1%" type="text" required ngModel name="rawISBN" class="form-control" id="rawISBNThirteen" aria-describedby="isbnHelp" placeholder="Enter 13 digit ISBN">
+      <button style="background-color: #0372B5;" id="thirteenFormSubmit" [disabled]="thirteenForm.invalid" type="submit" class="btn btn-primary">Validate</button>
+    </div>
+  </div>
+</form>
+
+<div id="thirteenSuccess" style="margin-top: 1%;" *ngIf="thirteenDigitSuccessAlert" class="alert alert-dismissible fade show banner-success banner-padding" role="alert">
+   <strong>Success!</strong> {{thirteenDigitISBN}} is a valid 13 digit ISBN.
+  <button (click)="closeThirteenDigitSuccessAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div id="thirteenFailure" style="margin-top: 1%" *ngIf="thirteenDigitFailureAlert" class="alert alert-dismissible fade show banner-fail" role="alert">
+  <strong>Oh no!</strong> {{thirteenDigitISBN}} is not a valid 13 digit ISBN. Reason: {{thirteenDigitFailureReason}}
+  <button (click)="closeThirteenDigitFailureAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+</div>

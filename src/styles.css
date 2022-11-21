@@ -1,0 +1,36 @@
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+body{
+    background: #FFF;
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.banner-fail {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    background-color: #fef0ed;
+}
+
+.banner-success {
+    background-color: #d7f0ee;
+}
+
+.banner-padding {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+}
+
+.thematic-padding {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+
