@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
+This application validates 10 and 13 digit ISBN. It is intended to be used in conjunction with https://github.com/plante-brendan/validateISBN. To use the application, run this and the backend application simultaneously and then navigate to localhost:4200.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
